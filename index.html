@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcMaster</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style-file/style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a2a47">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+
+<body>
+    <!-- Existing HTML content remains unchanged -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/calcimg.png" alt="CalcMaster Logo" class="logo-img">
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Calculator</a></li>
+        <li><a href="html-file/BMI.html">BMI Index</a></li>
+        <li><a href="html-file/AgeCount.html">Age Count</a></li>
+      </ul>
+
+      <div class="auth-buttons">
+        <button class="sign-in">Sign In/Up</button>
+        <!-- <button class="btn sign-up">Sign Up</button> -->
+        <label class="switch">
+          <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <g fill="#ffd43b">
+                <circle r="5" cy="12" cx="12"></circle>
+                <path
+                  d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -
+                                .7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z">
+                </path>
+              </g>
+            </svg></span>
+          <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+              <path
+                d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
+              </path>
+            </svg></span>
+          <input type="checkbox" class="input">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="slider-links" id="slider-links">
+        <li><a href="index.html" class="slider-active">Calculator</a></li>
+        <li><a href="html-file/BMI.html" class="slider-active">BMI Index</a></li>
+        <li><a href="html-file/AgeCount.html" class="slider-active">Age Count</a></li>
+        <ul id="slider-sign-in">
+          <li><a href="#">Sign In/Up</a></li>
+        </ul>
+        <ul>
+
+        </ul>
+      </ul>
+
+
+    </nav>
+  </header>
+
+  <main>
+    <div class="calculator">
+      <div id="calchis">
+        <i class="fa-solid fa-clock-rotate-left"></i>
+      </div>
+      <div id="his-table">
+        <div class="history-placeholder">No history available</div>
+      </div>
+
+
+      <input type="text" class="display" id="display" disabled>
+
+      <div class="buttons">
+        <!-- First row -->
+        <button class="btn clear" data-value="C">C</button> <!-- C button remains as text -->
+        <button class="btn delete" data-value="DEL"><i class="fas fa-backspace"></i></button>
+        <!-- Del button -->
+        <button class="btn operator" data-value="+"><i class="fas fa-plus"></i></button> <!-- + button -->
+        <button class="btn operator" data-value="-"><i class="fas fa-minus"></i></button> <!-- - button -->
+
+        <!-- Second row -->
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn operator" data-value="*"><i class="fas fa-times"></i></button> <!-- * button -->
+
+        <!-- Third row -->
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn operator" data-value="/"><i class="fas fa-divide"></i></button> <!-- / button -->
+
+        <!-- Fourth row -->
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn operator" data-value="%"><i class="fas fa-percent"></i></button> <!-- % button -->
+
+        <!-- Fifth row -->
+        <button class="btn" data-value=".">.</button>
+        <button class="btn" data-value="0">0</button>
+        <button class="btn equal" data-value="="><i class="fas fa-equals"></i></button> <!-- = button -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section images">
+        <img src="images/calclogo.png" alt="Calc Logo" class="footer-logo">
+        <img src="images/calcimg.png" alt="Calc Image" class="footer-img">
+      </div>
+      <div class="footer-section about">
+        <h3>About CalcMaster</h3>
+        <p>CalcMaster is a modern web-based calculator offering precise calculations, BMI analysis, and age computation. Designed for students and professionals,
+           it combines intuitive functionality with elegant design. Our platform delivers reliable results with a clean, user-friendly interface. Continuous updates ensure optimal performance and new features.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Feedback</h3>
+        <form class="feedback-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Feedback" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> calcmaster@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Park, Bangalore, India</p>
+        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 CalcMaster. All rights reserved. | Designed By Sudip Bag.</p>
+    </div>
+  </footer>
+
+  <script src="script-file/script.js"></script>
+</body>
+
+</html>

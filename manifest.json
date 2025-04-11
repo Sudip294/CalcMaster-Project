@@ -1,0 +1,21 @@
+{
+  "name": "CalcMaster",
+  "short_name": "CalcMaster",
+  "description": "A modern web calculator with BMI and AgeCount features",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1a2a47",
+  "theme_color": "#1a2a47",
+  "icons": [
+    {
+      "src": "/images/calclogo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/calclogo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

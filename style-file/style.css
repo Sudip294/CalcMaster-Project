@@ -1,0 +1,771 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a2a47;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+}
+
+.logo {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    /* mix-blend-mode:multiply; */
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline-block;
+    position: relative;
+    /* For active indicator */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links li:hover {
+    background-color: rgba(82, 82, 82, 0.7);
+    /* Grey with opacity */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    padding: 5px 10px;
+}
+
+/* Active link styling */
+.nav-links li.active::after {
+    content: "";
+    position: absolute;
+    /* bottom: -5px; */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Responsive Nav */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sign-in {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 35px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in:hover {
+    background-color: rgba(82, 82, 82, 0.7);
+    /* Grey with opacity */
+}
+
+/* .auth-buttons .btn.sign-up {
+    background-color: #2980b9;
+} */
+
+/* slider link css */
+
+.slider-links {
+    display: none;
+}
+
+/* From Uiverse.io dark/light toggle */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #73C0FC;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    left: 2px;
+    bottom: 2px;
+    z-index: 2;
+    background-color: #e8e8e8;
+    transition: .4s;
+}
+
+.sun svg {
+    position: absolute;
+    top: 6px;
+    left: 36px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+.moon svg {
+    fill: #73C0FC;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+}
+
+/* .switch:hover */
+.sun svg {
+    animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* .switch:hover */
+.moon svg {
+    animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.input:checked+.slider {
+    background-color: #183153;
+}
+
+.input:focus+.slider {
+    box-shadow: 0 0 1px #183153;
+}
+
+.input:checked+.slider:before {
+    transform: translateX(30px);
+}
+
+
+/* responsive navbar css */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 4;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media screen and (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+
+    .hamburger {
+        display: flex;
+    }
+
+    .slider-links {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        font-size: 1.1em;
+        background-color: rgba(82, 80, 80, 0.7);
+        transition: right 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        padding-top: 50px;
+        /* Space for close button */
+        backdrop-filter: blur(5px);
+        z-index: 3;
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .slider-links li {
+        padding: 5px 10px;
+        transition: background-color 0.3s ease;
+
+    }
+
+    .slider-links li:hover {
+        background-color: rgba(82, 82, 82, 0.7);
+        /* Grey with opacity */
+    }
+
+    /* .slider-links ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    } */
+
+    .slider-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        display: block;
+        padding: 5px 10px;
+    }
+
+    .slider-links.active {
+        right: 0;
+    }
+
+    .auth-buttons {
+        margin-left: auto;
+        margin-right: 0.8rem;
+    }
+
+    .sign-in {
+        display: none;
+    }
+
+    #slider-sign-in li {
+        list-style: none;
+        margin-top: 0.8rem;
+        background-color: rgba(180, 247, 151, 0.2);
+    }
+
+    #slider-sign-in a {
+        color: rgb(116, 255, 116) !important;
+    }
+}
+
+/* calc css */
+.calculator {
+    margin-top: 6rem;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    animation: zoomIn 1s ease forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        /* Adjust scale as needed */
+        opacity: 1;
+        /* Optional: fade effect */
+    }
+}
+
+/* calc history icon css */
+#calchis {
+    cursor: pointer;
+    color: #000000;
+    position: absolute;
+    z-index: 2;
+    left: 1.5rem;
+    top: 1.5rem;
+    /* float: left; */
+}
+
+/* Tooltip hidden by default */
+#calchis::after {
+    content: "History";
+    /* Text that will show on hover */
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 125%;
+    /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Center it */
+    background-color: #555;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show tooltip on hover */
+#calchis:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+#his-table {
+    display: none;
+    background-color: rgb(113, 113, 113);
+    position: absolute;
+    height: 4rem;
+    width: 88%;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+#his-table.show {
+    display: flex;
+    /* Show it as flex when .show class is added */
+    flex-direction: column;
+    /* You can adjust the flex direction or layout as needed */
+}
+
+.history-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    /* Light grey text */
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Full height of the table */
+    width: 100%;
+    /* Full width of the table */
+    text-align: center;
+    background-color: #555;
+    /* Slightly darker background */
+    border-radius: 5px;
+}
+
+.history-entry {
+    color: #ffffff;
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.history-entry .calculation {
+    flex-grow: 1;
+    transition: color 0.3s ease;
+}
+
+.history-entry .calculation:hover {
+    color: #3498db;
+}
+
+.history-entry .delete-entry {
+    color: #e74c3c;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.3s ease;
+}
+
+.history-entry .delete-entry:hover {
+    color: #c0392b;
+}
+
+/* Updated Display Style */
+.display {
+    width: 100%;
+    background-color: #f4e1d2;
+    /* Light Skin tone color */
+    color: #333;
+    /* Dark text for better contrast */
+    border: none;
+    padding: 20px;
+    font-size: 2em;
+    text-align: right;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    margin-left: 10px;
+    /* Gap on the left */
+    margin-right: 10px;
+    /* Gap on the right */
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect overall width */
+}
+
+/* Button Container */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    grid-gap: 10px;
+    width: 100%;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #444;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    height: 60px;
+    /* Ensure all buttons have equal height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect */
+.btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Operator Buttons */
+.operator {
+    background-color: #f39c12;
+    /* Warm Yellow for operators */
+}
+
+.operator:hover {
+    background-color: #e67e22;
+}
+
+/* Equal Button */
+.equal {
+    background-color: #27ae60;
+    /* Green for Equal */
+    grid-column: span 2;
+    /* Make the = button take up two columns */
+}
+
+.equal:hover {
+    background-color: #2ecc71;
+}
+
+/* Clear Button */
+.clear {
+    background-color: #c0392b;
+    /* Red for clear */
+}
+
+.clear:hover {
+    background-color: #e74c3c;
+}
+
+/* Percent Button */
+.percent {
+    background-color: #f39c12;
+    /* Match color of other operator buttons */
+}
+
+.percent:hover {
+    background-color: #e67e22;
+}
+
+/* Delete Button */
+.delete {
+    background-color: #2980b9;
+    /* Blue for delete */
+}
+
+.delete:hover {
+    background-color: #3498db;
+}
+
+/* Keypress Animations */
+@keyframes buttonClick {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.95);
+    }
+}
+
+.btn:active {
+    animation: buttonClick 0.1s forwards;
+}
+
+/* Add animation for button press */
+.btn.pressed {
+    transform: scale(0.9);
+    transition: transform 0.1s ease-in-out;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0 0 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.footer-section.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    max-width: 280px;
+}
+
+.footer-img {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.footer-img:hover,
+.footer-logo:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .footer-section.images {
+        flex-direction: column;
+        max-width: 100%;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+.footer-section h3 {
+    color: #495efb;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.footer-section p, 
+.footer-section ul {
+    color: #bbb;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f39c12;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+}
+
+.feedback-form textarea {
+    height: 50px;
+    resize: vertical;
+}
+
+.feedback-form button {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-form button:hover {
+    background-color: #e67e22;
+}
+
+.footer-section.contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #111;
+    color: #888;
+    font-size: 0.9em;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        text-align: center;
+        padding: 15px 0;
+    }
+    
+    .footer-section.contact p {
+        justify-content: center;
+    }
+}
+
