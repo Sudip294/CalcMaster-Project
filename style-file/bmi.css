@@ -95,6 +95,8 @@ h1 {
     /* Center it */
     background-color: #555;
     color: #fff;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 5px;
     border-radius: 5px;
     transition: opacity 0.3s, visibility 0.3s;
@@ -106,7 +108,7 @@ h1 {
 
 .fa-clock-rotate-left:hover::after {
     transform: translateY(-0px);
-    transform: translateX(-48px);
+    transform: translateX(-35px);
     visibility: visible;
     opacity: 1;
 }
