@@ -56,9 +56,11 @@ self.addEventListener('activate', event => {
 // Fetch event - respond with cached assets or fetch from network
 self.addEventListener('fetch', event => {
   if (event.request.mode === 'navigate') {
-    // Handle navigation requests - serve cached index.html for offline support
+    // Handle navigation requests - serve cached matching HTML or fallback to index.html
     event.respondWith(
-      fetch(event.request).catch(() => caches.match('/index.html'))
+      caches.match(event.request).then(cachedResponse => {
+        return cachedResponse || fetch(event.request).catch(() => caches.match('/index.html'));
+      })
     );
   } else {
     // Handle other requests - cache first, then network fallback
