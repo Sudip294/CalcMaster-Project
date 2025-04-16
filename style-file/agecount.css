@@ -99,10 +99,10 @@
     background: rgba(255, 255, 255, 0.9);
   }
 
-   .age-input::placeholder {
+   .age-input[type="date"]::placeholder {
     color: #aaa;
     opacity: 1;
-   }
+  }
 
   .name-input {
     padding-right: 2.5rem;
