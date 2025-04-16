@@ -98,7 +98,12 @@
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.9);
   }
-  
+
+   .age-input::placeholder {
+    color: #aaa;
+    opacity: 1;
+   }
+
   .name-input {
     padding-right: 2.5rem;
   }
